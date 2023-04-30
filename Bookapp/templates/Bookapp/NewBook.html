@@ -1,0 +1,30 @@
+
+{% extends './index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class='container'>
+        <ul class='breadcrunb'>
+            <li class='breadcrunb-item1'>
+                <a href="{% url 'list_all_department' %}">Department</a> 
+            </li>
+            <li class='breadcrunb-item active'>{{Department.name}}</li>
+        </ul>
+    </div>
+    
+    <div class='container'>
+        <div class='container'>
+            <form action="{% url 'NewBook' Department.id %}" method='post'>
+                {% csrf_token %}
+                {{form | crispy}}
+                <input type='submit' value='Add New Book'>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+{% endblock content %}
+    

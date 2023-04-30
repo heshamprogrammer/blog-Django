@@ -1,0 +1,36 @@
+
+{% extends './index.html' %}
+
+
+
+{% block content %}
+<div class='landing '>
+    <div class='container text-dark text-center'>
+        <h1>the largest library in the middle east</h1>
+        <p>you can find any book</p>
+    </div>
+</div>
+
+<div class='Departments'>
+    <div class='container'>
+        {% for dept in  Departments %}
+        <div class='dept'>
+            <h3>
+                <a href="{% url 'Department' dept.id %}">{{dept.code}} {{dept.name}}</a>
+            </h3>
+            <hr>
+            <p>{{dept.date}}</p>
+            <p>{{dept.desc}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class='container'>
+    <a href="{% url 'add_new_department' %}" class='btn btn-secondary'>
+        Add New Department
+    </a>
+</div>
+<br>
+{% endblock content %}
+    

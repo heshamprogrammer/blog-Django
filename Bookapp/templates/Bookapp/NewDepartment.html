@@ -1,0 +1,23 @@
+
+{% extends './index.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='landing '>
+    <div class='container text-dark text-center'>
+        <h1>the largest library in the middle east</h1>
+        <p>you can find any book</p>
+    </div>
+</div>
+
+<div class='container'>
+    <form action='Add_Department' method='post'>
+        {% csrf_token %}
+        {{form | crispy}}
+        <input type='submit' value='Add New Department'>
+    </form>
+</div>
+
+{% endblock content %}
+    

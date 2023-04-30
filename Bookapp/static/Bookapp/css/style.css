@@ -1,0 +1,83 @@
+body{
+    position: relative;
+}
+.landing{
+    padding:10px;
+    margin:5px;
+    background-color:#ccc
+}
+header,footer{
+    background-color: #252525;
+    color:white;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 20px;
+    text-align:center;
+}
+*{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,a{
+    text-decoration: none;
+    list-style-type: none;
+}
+.Departments{
+    /* background-color: red; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Departments .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 10px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Departments .container .dept{
+    /* border: 1px solid red; */
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 10px;
+}
+    
+.Departments .container p{
+    opacity: 0.6;
+}
+.container{
+position: relative;
+}
+.breadcrunb{
+    display: flex;
+    background-color: #ccc;
+    margin-top: 10px;
+    padding: 10px;
+    align-items: center;
+    font-weight: bold;
+}
+.breadcrunb-item1{
+    position: relative;
+    margin-right:30px;
+}
+.breadcrunb-item1::after{
+    content: '/';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #252525;
+    font-size: 20px;
+}
+.active{
+    opacity:0.6;
+    color: black;
+}
+.table tbody tr:hover{
+    background-color: #ccc;
+}

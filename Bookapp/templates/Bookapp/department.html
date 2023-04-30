@@ -1,0 +1,47 @@
+
+{% extends './index.html' %}
+
+
+
+{% block content %}
+
+    <div class='container'>
+        <ul class='breadcrunb'>
+            <li class='breadcrunb-item1'>
+                <a href="{% url 'list_all_department' %}">Department</a> 
+            </li>
+            <li class='breadcrunb-item active'>{{Department.name}}</li>
+        </ul>
+    </div>
+    
+    <div class='container'>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">author</th>
+                <th scope="col">year</th>
+              </tr>
+            </thead>
+            {% for book in  Department.books.all %}
+                <tbody>
+                    <tr>
+                      <th scope="row">{{book.length}}</th>
+                      <td>{{book.name}}</td>
+                      <td>{{book.author}}</td>
+                      <td>{{book.year}}</td>
+                    </tr>
+                  </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <div class='container'>
+      <a href="{% url 'NewBook' Department.id %}" class='btn btn-secondary'>
+          Add New Book
+      </a>
+  </div>
+  <br>
+{% endblock content %}
+    
